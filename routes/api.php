@@ -17,8 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::prefix('products')->group(function(){
-    Route::get('list', [\App\Http\Controllers\Api\ProductsController::class,'index']);
-    Route::get('show/{id}', [\App\Http\Controllers\Api\ProductsController::class,'show']);
-});

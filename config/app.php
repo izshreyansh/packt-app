@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'token' => env('PACKT_TOKEN', 'n4k0srKzu5yKNYfzECBePGEmOPgRSdQtGpssA5tY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -69,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Kolkata',
 
     /*
     |--------------------------------------------------------------------------
