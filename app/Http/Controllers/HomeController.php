@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         return view('home', [
-            'books' => Products::list(4, 0),
+            'books' => Products::list(7, 0),
         ]);
     }
 }
