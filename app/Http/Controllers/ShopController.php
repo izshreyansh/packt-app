@@ -16,7 +16,7 @@ class ShopController extends Controller
 
     public function show($id)
     {
-        $product = Cache::remember($id, 3600, function () use ($id) {
+        $product = Cache::remember($id, 86400, function () use ($id) {
             return [
                 'details' => Products::show($id),
                 'price'   => Products::price($id)
