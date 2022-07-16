@@ -13,10 +13,7 @@ class Products extends Packt
         }));
 
         $products = $products->map(function ($product, $key) {
-            if ($key % 2 === 0) {
-                sleep(1);
-            }
-
+            
             return Cache::remember($product['id'], 86400, function () use ($product) {
                 $product['details'] = $this->show($product['id']);
                 $product['price'] = $this->price($product['id']);
