@@ -10,7 +10,7 @@ class ShopController extends Controller
     public function index()
     {
         return view('shop', [
-            'books' => Products::list(9, 0)
+            'books' => Products::list(10, 0)
         ]);
     }
 
