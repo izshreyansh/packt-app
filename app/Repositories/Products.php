@@ -13,7 +13,7 @@ class Products extends Packt
         }));
 
         $products = $products->map(function ($product, $key) {
-            
+
             return Cache::remember($product['id'], 86400, function () use ($product) {
                 $product['details'] = $this->show($product['id']);
                 $product['price'] = $this->price($product['id']);
@@ -45,7 +45,9 @@ class Products extends Packt
 
     public function price($id, $currency = 'INR')
     {
-        return $this->makeCall("api/v1/products/{$id}/price/{$currency}", 'get');
+        return Cache::remember($id.$currency, 86400, function () use ($id, $currency) {
+            return $this->makeCall("api/v1/products/{$id}/price/{$currency}", 'get');
+        });
     }
 
     public function cover($id, $size = 'small')
